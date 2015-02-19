@@ -12,7 +12,6 @@
 @implementation Contador {
     int boy;
     int girl;
-    int total;
 }
 
 + (instancetype)sharedInstance {
@@ -29,18 +28,15 @@
     if(self) {
         boy = 0;
         girl = 0;
-        total = 0;
     }
     return self;
 }
 
 - (void)maisUmCueca {
     boy++;
-    total = boy + girl;
 }
 - (void)maisUmaGata {
     girl++;
-    total = boy + girl;
 }
 
 -(int)getBoys {
@@ -52,7 +48,7 @@
 }
 
 -(int)getTotal {
-    return total;
+    return boy + girl;
 }
 
 @end
