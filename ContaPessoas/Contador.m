@@ -15,9 +15,18 @@
     int total;
 }
 
--(id)init {
++ (instancetype)sharedInstance {
+    static dispatch_once_t onceToken = 0;
+    __strong static Contador *instance = nil;
+    dispatch_once(&onceToken,^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
+- (instancetype)init {
     self = [super init];
-    if (self) {
+    if(self) {
         boy = 0;
         girl = 0;
         total = 0;

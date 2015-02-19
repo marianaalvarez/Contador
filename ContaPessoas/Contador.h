@@ -8,6 +8,7 @@
 
 @interface Contador : NSObject 
 
++ (instancetype)sharedInstance;
 - (void)maisUmCueca;
 - (void)maisUmaGata;
 
