@@ -10,9 +10,11 @@
 
 - (void)maisUmCueca;
 - (void)maisUmaGata;
+- (void)maisUmaPessoa;
 
 -(int)getBoys;
 -(int)getGirls;
+-(int)getTotal;
 
 @end
 

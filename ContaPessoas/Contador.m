@@ -12,6 +12,7 @@
 @implementation Contador {
     int boy;
     int girl;
+    int total;
 }
 
 -(id)init {
@@ -19,15 +20,19 @@
     if (self) {
         boy = 0;
         girl = 0;
+        total = 0;
     }
     return self;
 }
 
 - (void)maisUmCueca {
-    boy = boy + 1;
+    boy++;
 }
 - (void)maisUmaGata {
     girl++;
+}
+-(void)maisUmaPessoa {
+    total++;
 }
 
 -(int)getBoys {
@@ -38,7 +43,9 @@
     return girl;
 }
 
-
+-(int)getTotal {
+    return total;
+}
 
 @end
 
