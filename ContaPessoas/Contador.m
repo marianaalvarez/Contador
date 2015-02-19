@@ -27,12 +27,11 @@
 
 - (void)maisUmCueca {
     boy++;
+    total = boy + girl;
 }
 - (void)maisUmaGata {
     girl++;
-}
--(void)maisUmaPessoa {
-    total++;
+    total = boy + girl;
 }
 
 -(int)getBoys {
