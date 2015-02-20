@@ -8,11 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "Contador.h"
 
-
-@implementation Contador {
-    int boy;
-    int girl;
-}
+@implementation Contador
 
 + (instancetype)sharedInstance {
     static dispatch_once_t onceToken = 0;
@@ -26,29 +22,31 @@
 - (instancetype)init {
     self = [super init];
     if(self) {
-        boy = 0;
-        girl = 0;
+        _boy = 0;
+        _girl = 0;
     }
     return self;
 }
 
 - (void)maisUmCueca {
-    boy++;
+    _boy++;
+    [_delegate atualiza];
 }
 - (void)maisUmaGata {
-    girl++;
+    _girl++;
+    [_delegate atualiza];
 }
 
 -(int)getBoys {
-    return boy;
+    return _boy;
 }
 
 -(int)getGirls {
-    return girl;
+    return _girl;
 }
 
 -(int)getTotal {
-    return boy + girl;
+    return _boy + _girl;
 }
 
 @end

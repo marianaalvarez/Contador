@@ -20,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     contador = [Contador sharedInstance];
+    contador.delegate = self;
+    [self atualiza];
+}
+
+-(void)atualiza {
+    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
+    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
+    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal] ];
 }
 
 
@@ -34,6 +42,8 @@
     _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
     _total.text = [NSString stringWithFormat:@"%d", [contador getTotal] ];
 }
+
+
 
 
 @end
